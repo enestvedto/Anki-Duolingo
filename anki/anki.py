@@ -59,7 +59,7 @@ def create_note(deck_name: str, front_content: str, back_content: str):
                 "Back": back_content
             },
             "options": {
-                "allowDuplicate": False,  # Prevent duplicates
+                "allowDuplicate": True,  # Prevent duplicates
             }
         })
         print(f"Note created: '{front_content}' | '{back_content}'.")
