@@ -2,6 +2,8 @@
 
 Anki-Duolingo enables users to combine the benefits of [Duolingo](https://www.duolingo.com/) and [Anki](https://apps.ankiweb.net/) to accelerate language learning. This tool makes use of [Anki-Connect](https://git.foosoft.net/alex/anki-connect) to communicate with your Anki application.
 
+Currently, the main feature of this tool is to create and update an Anki deck with all vocab someone has unlocked on Duolingo. Future plans can be found below in the TODO sections.
+
 ## Installation
 
 The installation process is similar to other Anki plugins and can be accomplished in three steps:
