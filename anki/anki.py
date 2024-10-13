@@ -34,12 +34,21 @@ def delete_decks(deck_names: list):
         print(f"Error deleting decks {deck_names}: {e}")
 
 def create_note(deck_name: str, front_content: str, back_content: str):
-    query = f"front:{front_content} back:{back_content}"
+    # Normalize the content
+    front_content = front_content.strip()
+    back_content = back_content.strip()
+
+    # Escape the contents for the query
+    front_content_escaped = f'"{front_content}"'  # Wrap in quotes
+    back_content_escaped = f'"{back_content}"'    # Wrap in quotes
+
+    # Construct the query string for finding notes
+    query = f"front:{front_content_escaped} back:{back_content_escaped}"
     existing_note_ids = invoke('findNotes', query=query)
 
     if existing_note_ids:
-        print(f"Note already exists: {front_content} | {back_content}.")
-        return None
+        print(f"Note already exists: Front: '{front_content}' | Back: '{back_content}'.")
+        return None  # Note already exists
 
     try:
         invoke('addNote', note={
@@ -50,10 +59,11 @@ def create_note(deck_name: str, front_content: str, back_content: str):
                 "Back": back_content
             },
             "options": {
-                "allowDuplicate": True,
+                "allowDuplicate": False,  # Prevent duplicates
             }
         })
-        print(f"Note created: {front_content} | {back_content}.")
+        print(f"Note created: '{front_content}' | '{back_content}'.")
         return True
     except Exception as e:
-        print(f"Error creating note '{front_content}': {e}")
+        print(f"Error creating note: {e}")
+        return False

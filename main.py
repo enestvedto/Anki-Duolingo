@@ -12,13 +12,14 @@ def main():
 
         # Extract words
         words = duolingo_bot.extract_words()
-        create_deck("Automated Duolingo Vocab")
+        
+        create_deck(duolingo_bot.credentials['deckname'])
 
         for word in words:
             try:
                 spanish_content = word.find_element(By.TAG_NAME, 'h3')
                 english_translation = word.find_element(By.TAG_NAME, 'p')
-                create_note("Automated Duolingo Vocab", english_translation.text, spanish_content.text)
+                create_note(duolingo_bot.credentials['deckname'], english_translation.text, spanish_content.text)
             except Exception as e:
                 print("Error accessing word content:", e)
 

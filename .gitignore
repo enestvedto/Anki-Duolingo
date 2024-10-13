@@ -50,4 +50,4 @@ Thumbs.db
 # Environment variables
 .env
 
-credentials.cfg 
+config.cfg 

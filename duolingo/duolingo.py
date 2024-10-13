@@ -21,10 +21,11 @@ class DuolingoBot:
     def load_credentials(self):
         config = configparser.ConfigParser()
         try:
-            config.read('config/credentials.cfg')  # Updated path
+            config.read('config.cfg')  # Updated path
             return {
                 'email': config.get('Duolingo', 'email'),
-                'password': config.get('Duolingo', 'password')
+                'password': config.get('Duolingo', 'password'),
+                'deckname': config.get('Anki', 'deckname')
             }
         except Exception as e:
             raise Exception(f"Failed to load credentials: {e}")
