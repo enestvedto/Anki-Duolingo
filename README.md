@@ -14,7 +14,7 @@ Anki must be kept running in the background in order for other applications to b
 
 ## Configuration
 
-# Make sure you have git and python installed. At this point you should also have Anki desktop installed and the plugin configured also.
+NOTE: Make sure you have git and python installed. At this point you should also have Anki desktop installed and the plugin configured also.
 
 1.  Install necessary python packages by running `pip install -r requirements.txt`
 2.  Replace `email` and `password` fields in [config.cfg](./config.cfg) with your Duolingo credentials.
@@ -22,11 +22,11 @@ Anki must be kept running in the background in order for other applications to b
 4.  Run `python3 main.py` and watch as your deck is automatically created in a matter of seconds/minutes!
     Note: This can be run over and over and it will not create duplicated cards that exactly match both the front and back of another card so you can keep updating your deck as you learn new words on Duolingo.
 
-# TODO:
+### TODO:
 
 1.  Make the script schedulable so your deck automatically stays up to date!
 
-# Maybe TODO:
+### Maybe TODO:
 
 1.  Include the audio clips for the target language.
 2.  Add tagging for Anki cards so you can study sub decks based on certain tags (ex. "foods", "animals", etc.)
