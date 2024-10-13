@@ -15,4 +15,4 @@ Anki must be kept running in the background in order for other applications to b
 ## Configuration
 
 1.  Install necessary python packages by running `pip install -r requirements.txt`
-2.  Replace `email` and `password` fields in [credentials.cfg](./credentials.cfg) with your Duolingo credentials.
+2.  Replace `email` and `password` fields in [credentials.cfg](./config/credentials.cfg) with your Duolingo credentials.
